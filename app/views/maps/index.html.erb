@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jVectorMap demo</title>
+  <link rel="stylesheet" href="assets/jquery-jvectormap-2.0.1.css" type="text/css" media="screen"/>
+  <script src="assets/jquery.js"></script>
+  <script src="assets/jquery-jvectormap-2.0.1.min.js"></script>
+  <script src="assets/jquery-jvectormap-in-mill.js"></script>
+</head>
+<body>
+  <div id="map" style="width: 600px; height: 400px"></div>
+  <script>
+  
+    var count = {
+  "IN-RJ": 200,
+  "IN-PB": 300,
+  "IN-HR": 840,
+  "IN-WB": 500,
+  "IN-MP": 400,
+  "IN-TR": 420,
+  "IN-AR": 120,
+  "IN-UP": 200,
+  "IN-KL": 330,
+  "IN-ML": 290,
+  "IN-MN": 390,
+  "IN-MH": 360,
+  "IN-OR": 345,
+  "IN-GJ": 342,
+  "IN-GR": 321,
+  "IN-CH": 943,
+  "IN-AP": 743,
+  "IN-MH": 673,
+  "IN-KA": 290,
+  "IN-GA": 432,
+  "IN-JK": 222,
+  "IN-HP": 462,
+  "IN-UT": 762,
+  "IN-BR": 332,
+  "IN-CT": 212,
+  "IN-TN": 882,
+  "IN-JH": 432,
+  "IN-AS": 982,
+  "IN-DD": 222,
+  "IN-NL": 112,
+  "IN-DL": 882,
+  "IN-SK": 122,
+  "IN-MZ": 113	
+ 
+
+};
+    $(function(){
+  $('#map').vectorMap({
+    map: 'in_mill',
+    series: {
+      regions: [{
+        values: count,
+        scale: ['#C8EEFF', '#0071A4'],
+        normalizeFunction: 'polynomial'
+      }]
+    },
+    onRegionTipShow: function(e, el, code){
+      el.html(el.html()+' : '+count[code]+')');
+    }
+  });
+});
+  </script>
+  
+</body>
+</html>

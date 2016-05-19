@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DemoApp</title>
+  <%= stylesheet_link_tag    'application','jquery-jvectormap-2.0.1', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application','gdp-data','jquery.min','jquery-jvectormap-2.0.1.min','jquery-jvectormap-in-mill','jquery-jvectormap-world-mill-en', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
